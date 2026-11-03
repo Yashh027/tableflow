@@ -12,6 +12,7 @@ from app.api.v1.sessions import router as sessions_router
 from app.api.v1.orders import router as orders_router
 from app.api.v1.staff import router as staff_router
 from app.api.v1.billing import router as billing_router
+from app.api.v1.management import router as management_router
 
 
 app = FastAPI(
@@ -45,6 +46,7 @@ app.include_router(sessions_router, prefix="/api/v1")
 app.include_router(orders_router, prefix="/api/v1")
 app.include_router(staff_router)
 app.include_router(billing_router)
+app.include_router(management_router, prefix="/api/v1")
 
 
 @app.get("/")

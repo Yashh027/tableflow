@@ -133,9 +133,8 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <p className="mt-6 text-center text-xs text-slate-400">
-          Secure restaurant operations workspace
-        </p>
+        <p className="mt-6 text-center text-sm text-slate-500">New to TableFlow? <a href="/register" className="font-semibold text-emerald-800 underline">Create a restaurant</a></p>
+        <p className="mt-3 text-center text-xs text-slate-400">Secure restaurant operations workspace</p>
       </div>
     </main>
   );

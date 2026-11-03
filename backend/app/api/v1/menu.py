@@ -164,3 +164,26 @@ def list_menu_items(
         }
         for item in items
     ]
+
+class MenuAvailabilityUpdate(BaseModel):
+    is_available: bool
+
+
+@router.patch("/items/{item_id}/availability")
+def update_menu_item_availability(
+    item_id: uuid.UUID,
+    data: MenuAvailabilityUpdate,
+    db: Session = Depends(get_db),
+    user: User = Depends(get_current_user),
+):
+    restaurant_id = require_restaurant(user)
+    item = db.scalar(select(MenuItem).where(
+        MenuItem.id == item_id,
+        MenuItem.restaurant_id == restaurant_id,
+    ))
+    if item is None:
+        raise HTTPException(status_code=404, detail="Menu item not found")
+    item.is_available = data.is_available
+    db.commit()
+    db.refresh(item)
+    return {"id": str(item.id), "is_available": item.is_available}
