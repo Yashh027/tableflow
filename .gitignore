@@ -1,0 +1,94 @@
+# Environment secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+build/
+coverage/
+*.tsbuildinfo
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+# TableFlow environment secrets
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env.local
+
+# Python
+**/.venv/
+**/venv/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Node / Next.js
+**/node_modules/
+**/.next/
+**/out/
+*.tsbuildinfo
+
+# Build and logs
+**/dist/
+**/build/
+*.log
+
+# Database backups and local dumps
+*.dump
+*.backup
+*.sql
+
+# Temporary security review artifacts
+Pasted text*.txt
+*-review.txt
+*-models.txt
+tenant-hardening-models.txt
+models-current-state.txt
+SECURITY_PATCH_README.md
+
+# Local editor / operating system files
+.DS_Store
+Thumbs.db
+.vscode/
+
+security-review-*.txt
+
+# Temporary source-code backups
+*.backup
+*.backup-*
+*.audit-backup
+*.security-backup
+*.step*-backup
+*.bak
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Historical files ending in -backup
+*-backup
